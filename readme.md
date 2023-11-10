@@ -1,5 +1,5 @@
 ![](hkbu.png)
-# COMP2026/COMP2045 Programming Assignment 3 - Discord bot
+# COMP2026/COMP2046 Programming Assignment 3 - Discord bot
 
 ## 2023-24 Semester 1
 
