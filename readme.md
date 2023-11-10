@@ -163,7 +163,7 @@ Submit your answers on Moodle.
 
 
 # Submission 
-For submission all Java files in a `zip` to Moodle.
+For submission: zip your `src` folder and upload the zip file to Moodle.
 
 Please be reminded that both the **Late Penalty Rule** and the **Penalty for Plagiarism** are applied strictly to all submissions of this course (including this assignment).   
 
