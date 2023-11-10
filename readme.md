@@ -7,25 +7,34 @@
 * Q & A: [Discord](https://discordapp.com/channels/1004554070083776672/1004554070083776678)
 * Assignment Website: [GitHub](https://github.com/khwang0/COMP2045-2324PA3)
 * Due: 
-  * UAT Due: 23:59pm TBD (Monday midnight)
-  * Programming Due: 23:59pm TBD (Thursday midnight)
+  * UAT Due: 23:59pm 20/11/2023 (Monday midnight)
+  * Programming Due: 23:59pm 4/12/2023 (Monday midnight)
 * Download the demo program: [here](demo.jar)
 * Download everything from the assignment: [here](https://github.com/khwang0/COMP2045-2324PA3/archive/refs/heads/master.zip)
-* Partnering rule: Not possible 
-* Submission; TBD
+* Partnering rule: In this assignment, you are allowed to partner with another student to complete the coding part of the assignment with the following rules apply:
+  * The student you have partnered must also be taking COMP2026/COMP2046 in this semester. 
+  * Each student may partner with at most one other student.
+  * Students who are in partner should work together physically at lab with our lab machines for most of the time. You need to report the date/time/location of your working session. We may audit that with our machine login time when necessary.
+  * Maximum score of the assignment is 100. If you partner with another student, the maximum score will be **80**.
+  * For students retaking this course, partnering with another student is highly encouraged and your maximum score will not be capped.
+  * **UAT is an individual task**. You should not discuss with your partner about the UAT before the UAT due.
+  * If you think you are one of the top students, simply ignore about this partnering rule.
+
+
+
 
 > To run the demo program, type the following in your terminal:
 > 
 > ```sh
-> > java -jar demo.jar
+> java -jar demo.jar
 > ```
 
 
-</sup></sub>
-
 # Learning outcome
 
-Students are expected to have some practices on object oriented concepts such as polynormphism, abstract class, interface. We expect most students would spend ten hours to finish the assignment while perhaps more than half of them is trying to understand that. Make sure you start earlier as possible and ask us on Discord if you have any difficulty! Note: This time you are **allowed** to use advanced data structures such as List or ArrayList that we have covered in class. You are asked to add class attributes/fields and methods in this assignment except for the classes that have been written for you already:
+Students are expected to have some practice on object-oriented concepts such as polymorphism, abstract class, and interface. We expect most students would spend ten hours finishing the assignment while perhaps more than 70% is trying to understand the assignment. Make sure you start as early as possible and ask us on Discord if you have any difficulty! 
+
+Note: This time you are **allowed** to use advanced data structures such as List or ArrayList that we have covered in class. You are asked to add class attributes/fields and methods in this assignment except for the classes that have been written for you already:
 - `bot/AbstractBot.java`
 - `bot/CommandBot.java`
 - `bot/TextBot.java`
@@ -53,11 +62,11 @@ You can test those function by interacting with the demo bot:
 
 ## Explanation about the assignment
 
-You are given the skeleton code. Complete all classes/methods in the assignment with respect to the instructions stated in the Java file.
+You are given the skeleton code. Complete all classes/methods in the assignment concerning the instructions stated in the Java file.
 
-`MyFirstBot` is the main class of the program. It instantiates some bots and associate them to Discord via a third party API (JDA). JDA is a very complicated API and therefore we have written some code for you to simplify the interface. In such case, you don't need to read any documentation about JDA. However, if you are interested in how JDA works, you can read the documentation [here](https://ci.dv8tion.net/job/JDA/javadoc/).
+`MyFirstBot` is the main class of the program. It instantiates some bots and associates them to Discord via a third-party API (JDA). JDA is a very complicated API and therefore we have written some code for you to simplify the interface. In such a case, you don't need to read any documentation about JDA. However, if you are interested in how JDA works, you can read the documentation [here](https://ci.dv8tion.net/job/JDA/javadoc/).
 
-In our project, there are two types of bots, `CommandBot` and `TextBot`. A `CommandBot` is to handle commands that start with `/` and a `TextBot` is to handle text messages. For example, if you type `/ping` in a channel, the `CommandBot` will handle the message and reply you with a message. If you type `ping` in a channel, the `TextBot` will handle the message and reply you with a message.
+In our project, there are two types of bots, `CommandBot` and `TextBot`. A `CommandBot` is to handle commands that start with `/` and a `TextBot` is to handle text messages. For example, if you type `/ping` in a channel, the `CommandBot` will handle the message and reply to you with a message. If you type `ping` in a channel, the `TextBot` will handle the message and reply to you with a message.
 
 
 ### CommandBot
@@ -71,22 +80,22 @@ In `MyFirstBot` you will see a UserManagementBot, a ScoreBot, and a WhoAmIBot ar
 
 ### TextBot
 
-A `TextBot` is a final class that does not need to be inherit anymore. A `TextBot` keeps a list of MessageListener and it will call the `onMessageReceived` method of each listener when a message is received. You can add a listener to a `TextBot` by calling `addListener`. MessageListener is an interface that has only one method `onMessageReceived`. You can implement this method to handle the message received by the bot. For example, if you want to handle the message `ping`, you will need to implement that in the PingMessageListener class that implements the MessageListener interface. The method `onMessageReceived` should return a String that is the message you want to reply to the user.
+A `TextBot` is a final class that does not need to be inherited anymore. A `TextBot` keeps a list of MessageListener and it will call the `onMessageReceived` method of each listener when a message is received. You can add a listener to a `TextBot` by calling `addListener`. MessageListener is an interface that has only one method `onMessageReceived`. You can implement this method to handle the message received by the bot. For example, if you want to handle the message `ping`, you will need to implement that in the PingMessageListener class that implements the MessageListener interface. The method `onMessageReceived` should return a String that is the message you want to reply to the user.
 
 ### Message and Command
 
-A `Message` is a class that represents a message sent by a user. A message simply contains the text (we don't consider messages in format other than text, such as images/video/emoji etc..), the sender Discord ID, the sender Discord name, and if the message is sent in private message (DM).
+A `Message` is a class that represents a message sent by a user. A message simply contains the text (we don't consider messages in a format other than text, such as images/video/emoji etc..), the sender Discord ID, the sender Discord name, and if the message is sent in a private message (DM).
 
 A `Command` is an extension of `Message` so that it also have _options_. Each option has two Strings - name and value. For example, in registration, you need to supply your registration code, for example, 123456. In this case, 
 - name of the option: `regcode`
 - value of the option: `123456`
 
-Each `CommandBot` that needs user to enter an option, will need to register the option name by calling the method `void addOption(String optionName, String optionDescription, boolean isRequired)`
+Each `CommandBot` that needs a user to enter an option, will need to register the option name by calling the method `void addOption(String optionName, String optionDescription, boolean isRequired)`
 
 
 ## How to compile the program
 
-First of all, you will need to have a Bot Account from Discord. It is suggested you follow the instruction [here](https://jda.wiki/using-jda/getting-started/) to setup a bot account. You will need to copy the **token** of your bot account (optionally paste it to the `MyFirstBot.java` > `token`).
+First of all, you will need to have a Bot Account from Discord. It is suggested you follow the instructions [here](https://jda.wiki/using-jda/getting-started/) to setup a bot account. You will need to copy the **token** of your bot account (optionally paste it to the `MyFirstBot.java` > `token`).
 
 Go to `MyFirstBot.java` and observe that the following code is enabled by default while the code below is disabled.
 ```java
@@ -137,32 +146,18 @@ Registration bot:
 
 ## `TestClass` class
 
-You don't need to do anything with this java file. The purpose of this file is to conduct some *unit test* for your code. If you are using IntelliJ, you should be able to use this file within a few quick steps. By looking at this file, you should have some ideas of how the TA grade your work!
-
-1. Open the file `TestClass.java`
-2. Click on the word `@Test` at line 31.
- ![](img/add-JUnit.png)
-3. Click the red bulb and select `Add JUnit-5.x.x to classpath`.
- ![](img/add-5.5.png)  
-4. Click the arrow on the left of `public class TestClass` at line 17 and select `Run Tests`.
-![](img/runTest.png)
-1. You shall see the following screen if there isn't any problem
-![](img/ok.png)  
-1. Or you will see some error if your code does not perform what it is suppose to do. For example in the figure below, the test case `testReadValidInput` is not working properly.
-![](img/notok.png) 
-
-> Note: If you are struggle with this file (e.g. cannot compile your code), simply delete this file. 
+There is no TestClass to be provided in this assignment. You are supposed to work it on your own now.
 
 # Understanding the Assignment Test (UAT)
 
-This part is independent to your programming code. You will need to answer the following short questions by **another due date**.
+This part is independent of your programming code. You will need to answer the following short questions by **another due date**.
 Submit your answers on Moodle. 
 
-1. Would the message received by a user different if he/she DM `ping` to the bot or type `ping` in a channel?
-2. Would the message received by a user different if he/she DM `seat` to the bot or type `seat` in a channel?
+1. Would the reply message be different if he/she DM `ping` to the bot or type `ping` in a channel?
+2. Would the reply message be different if he/she DM `seat` to the bot or type `seat` in a channel?
 3. Can a user register twice?
 4. Can a user register with a wrong registration code?
-5. Which class is the parent class of `CommandBot`?
+5. Which class is the superclass of `CommandBot`?
 
 ---
 
