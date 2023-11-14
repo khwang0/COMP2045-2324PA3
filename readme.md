@@ -7,18 +7,18 @@
 * Q & A: [Discord](https://discordapp.com/channels/1004554070083776672/1004554070083776678)
 * Assignment Website: [GitHub](https://github.com/khwang0/COMP2045-2324PA3)
 * Due: 
-  * UAT Due: 23:59pm 20/11/2023 (Monday midnight)
+  * UAT Due: 23:59pm 23/11/2023 (Thursday midnight)
   * Programming Due: 23:59pm 4/12/2023 (Monday midnight)
 * Download the demo program: [here](demo.jar)
 * Download everything from the assignment: [here](https://github.com/khwang0/COMP2045-2324PA3/archive/refs/heads/master.zip)
 * Partnering rule: In this assignment, you are allowed to partner with another student to complete the coding part of the assignment with the following rules apply:
   * The student you have partnered must also be taking COMP2026/COMP2046 in this semester. 
   * Each student may partner with at most one other student.
-  * Students who are in partner should work together physically at lab with our lab machines for most of the time. You need to report the date/time/location of your working session. We may audit that with our machine login time when necessary.
-  * Maximum score of the assignment is 100. If you partner with another student, the maximum score will be **80**.
+  * Students who are in partners should work together physically at the lab with our lab machines for most of the time. You need to report the date/time/location of your working session. We may audit that with our machine login time when necessary.
+  * The maximum score of the assignment is 100. If you partner with another student, the maximum score will be **95**.
   * For students retaking this course, partnering with another student is highly encouraged and your maximum score will not be capped.
-  * **UAT is an individual task**. You should not discuss with your partner about the UAT before the UAT due.
-  * If you think you are one of the top students, simply ignore about this partnering rule.
+  * **UAT is an individual task**. You should not discuss with your partner about the UAT before the UAT due-date.
+  * If you think you are one of the top students, simply ignore this partnering rule.
 
 
 
@@ -38,6 +38,7 @@ Note: This time you are **allowed** to use advanced data structures such as List
 - `bot/AbstractBot.java`
 - `bot/CommandBot.java`
 - `bot/TextBot.java`
+- `bot/PingMessageListener.java`
 - `tools/TextPair.java`
 
 You are not suppose to modify the above classes.
@@ -163,7 +164,9 @@ Submit your answers on Moodle.
 
 
 # Submission 
-For submission: zip your `src` folder and upload the zip file to Moodle.
+For submission: zip your `src` folder and upload the zip file to Moodle. 
+
+> For those don't know if you zip it correctly, run the gradle task `zip`. This task can be created by adding a new gradle task in your IntelliJ just like how you compile the program. But this time we use the command `zip` instead of `run`. A `src.zip` will be generated in your project folder. You can upload this zip file to Moodle.
 
 Please be reminded that both the **Late Penalty Rule** and the **Penalty for Plagiarism** are applied strictly to all submissions of this course (including this assignment).   
 
@@ -188,7 +191,7 @@ if (lateHour > 0) {
 
  ## Plagiarism
 
- Plagiarism is a serious offense and can be easily detected. Please don't share your code to your classmate even if they are threatening you with your friendship. If they don't have the ability to work on something that can compile, they would not be able to change your code to a state that we can't detect the act of plagiarism. For the first commit of plagiarism, regardless you shared your code or copied code from others, you will receive 0 with an addition of 5-mark penalty. If you commit plagiarism twice, your case will be presented in the exam board and you will receive a F directly.
+ Plagiarism is a serious offense and can be easily detected. Please don't share your code to your classmates even if they are threatening you with your friendship. If they don't have the ability to work on something that can compile, they would not be able to change your code to a state that we can't detect the act of plagiarism. For the first commit of plagiarism, regardless you shared your code or copied code from others, you will receive 0 with an addition of 5-mark penalty. If you commit plagiarism twice, your case will be presented in the exam board and you will receive an F directly.
 
 
 > # Terms about generative AI

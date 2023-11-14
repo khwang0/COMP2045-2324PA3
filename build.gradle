@@ -63,3 +63,8 @@ run {
     standardInput = System.in
 }
 
+task zip(type: Zip) {
+    from 'src'
+    archiveFileName = 'src.zip'
+    destinationDir = file('./')
+}
