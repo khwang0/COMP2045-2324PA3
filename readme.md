@@ -98,6 +98,38 @@ Each `CommandBot` that needs a user to enter an option, will need to register th
 
 First of all, you will need to have a Bot Account from Discord. It is suggested you follow the instructions [here](https://jda.wiki/using-jda/getting-started/) to setup a bot account. You will need to copy the **token** of your bot account (optionally paste it to the `MyFirstBot.java` > `token`).
 
+Then you need to have a Discord server to test your bot. Add one. Then you need to add your bot to the server. Copy the server ID (not your Token) and edit the link below (replace YOUR_SERVER_ID_HERE with your server ID). Then open the link in your browser and add the bot to your server.
+
+> https://discord.com/api/oauth2/authorize?client_id=YOUR_SERVER_ID_HERE&scope=bot
+
+Next, try running the demo program by typing the following in your terminal:
+
+```sh
+java -jar demo.jar
+```
+It will ask you for the token of your bot. Paste the token and press enter. You should see the following outputs from your console. Your bot will be running on your server.
+```txt
+Please set the token in MyFirstBot.java, or enter here now
+MTE3NDU1NzY0MDQ1NDU3ODI3Nw.Giy0WS.pM-7y48pIIWy2buzLa_Cnmg8Hr4MFSaN5ljkdU
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+SLF4J: Failed to load class "org.slf4j.impl.StaticMDCBinder".
+SLF4J: Defaulting to no-operation MDCAdapter implementation.
+SLF4J: See http://www.slf4j.org/codes.html#no_static_mdc_binder for further details.
+[main] INFO JDA - Login Successful!
+[JDA MainWS-ReadThread] INFO WebSocketClient - Connected to WebSocket
+[JDA MainWS-ReadThread] INFO JDA - Finished Loading!
+Print Log: TextBot is running.
+Registration bot:
+There are 1/3 users has registered the system
+Print Log: TextBot is running.
+Registration bot:
+There are 1/3 users has registered the system
+```
+
+### How to compile your code
+
 Go to `MyFirstBot.java` and observe that the following code is enabled by default while the code below is disabled.
 ```java
 //After getting started, delete the following lines and enable the code below
@@ -144,6 +176,48 @@ Registration bot:
 > The reason that we are using Gradle here is because there is an extra library JDA that we need to use in order to link with your Discord.
 
 
+## Expected Behaviors (new!)
+
+On the following issues, your bot should behave the same as the demo program, including the message format and the message content.:
+- `ping` - when the message is sent in a public channel and in private.
+- `seat` - when the message is sent in a public channel
+- `seat` - when the message is sent in private.
+- `registration` - when the command is made by a registered user
+- `registration` - when the command is made by an unregistered user
+- `registration` - when the command is made by an unregistered user with a wrong registration code
+- `score` - when the command is made by a registered user
+- `score` - when the command is made by an unregistered user
+- `whoami` - when the command is made by a registered user
+- `whoami` - when the command is made by an unregistered user
+- The output on the console. i.e.
+```txt
+...
+Registration bot:
+There are 1/3 users has registered the system
+Print Log: TextBot is running.
+Registration bot:
+There are 1/3 users has registered the system
+Print Log: TextBot is running.
+Registration bot:
+There are 1/3 users has registered the system
+Print Log: TextBot is running.
+Registration bot:
+There are 1/3 users has registered the system
+Print Log: TextBot is running.
+Registration bot:
+There are 1/3 users has registered the system
+WhoAmIBot is still running!
+...
+```
+
+It is your responsibility to work out how the demo works by inspecting Anya on our server or by interacting with the demo program. You can execute the demo program together with all CSV files in the same folder by running
+
+```txt
+java -jar demo.jar
+Please set the token in MyFirstBot.java, or enter here now
+MTEzNDxxxxxxxxxxxxxxxxxx.GWeEXo.todiQJz-txxxxxxxxxxx-xxxxx-Z3spBGA
+```
+Then your bot will be running on your server.
 
 ## `TestClass` class
 

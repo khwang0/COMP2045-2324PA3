@@ -66,5 +66,5 @@ run {
 task zip(type: Zip) {
     from 'src'
     archiveFileName = 'src.zip'
-    destinationDir = file('./')
+    destinationDirectory = file('./')
 }
